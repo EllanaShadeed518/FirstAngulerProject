@@ -1,0 +1,45 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="alert alert-danger"><p class="text-primary">{{title}}</p><!--templete binding to print data from component to html--></div>
+<div class ="alert alert-primary"><p class="text-primary">{{number}}</p></div>
+<div class ="alert alert-primary" *ngIf="toggle"><p class="text-primary">Open or Close Modle</p></div><!--اي اشي قبله نجمة منسميه دايركتف
+دائما لما يكون عندي شرط وقيمته فولز اذا هذلا التاج مستحيل يظهر رح يختفي -->
+
+<div class="alert alert-success">
+  <ul *ngFor="let name of names" >
+    <li>{{name}}</li>
+  </ul>
+
+
+</div>
+
+<button class="btn btn-primary m-3"(click)="changetitle('new title')">change title</button><!--event binding to take data from html to component -->
+<button class="btn btn-success" (click)="increamentNum()">increament number</button>
+<button class="btn btn-warning m-3" (click)="addName()">refresh names</button>
+<button class="btn btn-warning m-3" (click)="addCustomer()">refresh customers</button>
+<button class="btn btn-primary text-white m-3"  (click)="changeToggle()">{{text}}</button><!--this button lik open close for module(popup)-->
+<a href={{link}}>Go</a>
+<table class="table auto">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Children</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.id}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.age}}</td>
+      <td>
+        <ul *ngFor="let chil of customer.children">
+<li>
+{{chil}}
+</li>
+        </ul>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
