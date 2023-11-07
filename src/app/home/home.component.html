@@ -12,19 +12,37 @@
 
 </div>
 
+
+<div class ="alert alert-primary"><p class="text-primary">{{address}}</p></div>
+<button  (click)="changeaddress()">change address</button>
+<input type="text" [(ngModel)]="address"  />
+<div class="m-3">
+  <input type="text" [(ngModel)]="animal" >
+<button  (click)="addanimale()">Add new animal</button>
+</div>
+
+<div>
+  <ul *ngFor="let an of animals">
+<li>
+  {{an}}
+</li>
+  </ul>
+</div>
+
 <button class="btn btn-primary m-3"(click)="changetitle('new title')">change title</button><!--event binding to take data from html to component -->
 <button class="btn btn-success" (click)="increamentNum()">increament number</button>
 <button class="btn btn-warning m-3" (click)="addName()">refresh names</button>
 <button class="btn btn-warning m-3" (click)="addCustomer()">refresh customers</button>
 <button class="btn btn-primary text-white m-3"  (click)="changeToggle()">{{text}}</button><!--this button lik open close for module(popup)-->
 <a href={{link}}>Go</a>
-<table class="table auto">
+<table class="table table-dark w-auto m-auto">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Age</th>
       <th scope="col">Children</th>
+      <th scope="col">Operations</th>
     </tr>
   </thead>
   <tbody>
@@ -38,6 +56,12 @@
 {{chil}}
 </li>
         </ul>
+      </td>
+      <td>
+        <button class="btn btn-success m-1">Edit</button>
+        <button class="btn btn-danger m-1">Delete</button>
+        <button class="btn btn-warning m-1" >View</button>
+
       </td>
     </tr>
 
